@@ -26,7 +26,6 @@ function generatePassword (includeUppercase, includeNumbers, includeSymbols, inc
     passwordCharacters.push(character) }
     console.log(passwordCharacters)
   
-    
   
 }
 
@@ -35,24 +34,34 @@ function userPrompts () {
   if (passwordLength < 8 || passwordLength > 128) {
     alert( "Password must have more than 8 and less than 128 characters")
     return
+    generatePassword();
   }
 
-  var includeNumbers = confirm("Include numbers in password.")
+  var includeNumbers = confirm("Would you like to include numbers in password? Cancel for no.")
   console.log(includeNumbers)
-  if(includeNumbers = true) then (userChoiceArray).concat(number_char_codes)
+  if(includeNumbers === true) {
+    charCodes = charCodes.concat(number_char_codes)
+  }
 
-  var includeLowercase = confirm("Include lowercase in password.")
+  var includeLowercase = confirm("Would you like to include lowercase in password? Cancel for no.")
   console.log(includeLowercase)
-  if(includeLowercase = true) then (userChoiceArray).concat(lowercase_char_codes)
+  if(includeLowercase === true) {
+    charCodes = charCodes.concat(lowercase_char_codes)
+  }
+
   
-  var includeSymbols = confirm( "Include symbols in password.")
+  var includeSymbols = confirm( "Would you like to include symbols in password? Cancel for no.")
   console.log(includeSymbols)
-  if(includeSymbols = true) then (userChoiceArray).concat(symbol_char_codes)
+  if(includeSymbols === true) {
+    charCodes = charCodes.concat(symbol_char_codes)
+  }
+
   
-  var includeUppercase = confirm ("Include uppercase characters.")
+  var includeUppercase = confirm ("Would you like to include uppercase characters? Cancel for no.")
   console.log(includeUppercase)
-  if (includeUppercase = true ) then (userChoiceArray).concat(
-    uppercase_char_codes) 
+  if (includeUppercase === true ) { 
+    charCodes = charCodes.concat( uppercase_char_codes) 
+  }
     
 }
 
@@ -63,6 +72,11 @@ function writePassword () {
   passwordText.value = password;
 
 }
+for (let i = 0; i = characterAmount; i++) {
+  const characterCode =charCodes[Math.floor(Math.random()* charCodes.length)]
+  randomPassword.push(String.charCodes(characterCode));
+}
+return randomPassword.join("");
 
 function arrayFromLowToHigh (low, high) {
   const array = []
