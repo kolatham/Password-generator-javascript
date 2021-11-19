@@ -2,7 +2,7 @@
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
-const lowercase_char_codes = arrayFromLowToHigh(65,90)
+  const lowercase_char_codes = arrayFromLowToHigh(65,90)
   const uppercase_char_codes = arrayFromLowToHigh(97,122)
   const number_char_codes = arrayFromLowToHigh(48, 57)
   const symbol_char_codes = arrayFromLowToHigh(33,47).concat(
@@ -16,9 +16,10 @@ const lowercase_char_codes = arrayFromLowToHigh(65,90)
   console.log(uppercase_char_codes)
   console.log(number_char_codes)
   console.log(symbol_char_codes)
-function generatePassword (includeUppercase, includeNumbers, includeSymbols, includeLowercase) {
+
+  function generatePassword (includeUppercase, includeNumbers, includeSymbols, includeLowercase) {
   const passwordCharacters = []
-  for (let i = 0; i < 8; i++) {
+  for (let i = 0; i = passwordCharacters;) {
     let character = lowercase_char_codes[Math.floor(Math.random() * lowercase_char_codes.length)]
     console.log(character)
     character = String.fromCharCode(character)
@@ -72,11 +73,6 @@ function writePassword () {
   passwordText.value = password;
 
 }
-for (let i = 0; i = characterAmount; i++) {
-  const characterCode =charCodes[Math.floor(Math.random()* charCodes.length)]
-  randomPassword.push(String.charCodes(characterCode));
-}
-return randomPassword.join("");
 
 function arrayFromLowToHigh (low, high) {
   const array = []
